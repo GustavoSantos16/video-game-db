@@ -18,7 +18,7 @@
 </div>
 <div class="games">
     <ng-container *ngFor="let game of games">
-        <div class="game">
+        <div class="game" (click)="openGameDetails(game.id)">
             <div class="game-thumb-container">
                 <img 
                     *ngIf="game.background_image"
@@ -34,7 +34,7 @@
                     <img
                         *ngFor="let gamePlatform of game.parent_platforms"  
                         class="game-platform" 
-                        src="assets/images/platforms/{{ gamePlatform.platform.name}}.svg" 
+                        src="assets/images/platforms/{{ gamePlatform.platform.name.toLowerCase()}}.svg" 
                         alt="slug">
                 </div>
             </div>
